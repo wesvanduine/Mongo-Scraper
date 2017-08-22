@@ -20,11 +20,14 @@
   },
   "homepage": "https://github.com/wesvanduine/Mongo-Scraper#readme",
   "dependencies": {
+    "bluebird": "^3.5.0",
     "body-parser": "^1.17.2",
     "cheerio": "^1.0.0-rc.2",
     "express": "^4.15.4",
     "express-handlebars": "^3.0.0",
     "mongoose": "^4.11.7",
+    "morgan": "^1.8.2",
+    "path": "^0.12.7",
     "request": "^2.81.0"
   }
 }
