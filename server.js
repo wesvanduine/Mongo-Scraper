@@ -1,35 +1,33 @@
-
-// Dependencies
-var express = require("express");
-var path = ("path");
-var bodyParser = require("body-parser");
-var logger = require("morgan");
+// Required NPM Packages
+var express = require('express');
+var path = require('path');
+var bodyParser = require('body-parser');
+var logger = require('morgan');
 var app = express();
-var mongoose = require("mongoose");
+var mongoose = require('mongoose');
 
-// Initialize Express Server
 var app = express();
 
-//Public Settings
+// Public Settings
 app.use(express.static(__dirname + '/public'));
 var port = process.env.PORT || 3000;
 
-//Database
+// Database
 require("./config/connection");
 
-//Use morgan logging
+// Use morgan logging
 app.use(logger("dev"));
 
-//BodyParser Settings
+// BodyParser Settings
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
-    extended: false
+	extended: false
 }));
 
-//Set up Handlebar for views
-var expressHandlebars = require("express-handlebars");
-app.engine("handlebars", expressHandlebars( {
-    defaultLayout: "main"
+// Set up Handlebar for views
+var expressHandlebars = require('express-handlebars');
+app.engine('handlebars', expressHandlebars({
+    defaultLayout: 'main'
 }));
 app.set('view engine', 'handlebars');
 
@@ -37,17 +35,9 @@ app.set('view engine', 'handlebars');
 var routes = require('./controllers/news.js');
 app.use('/',routes);
 
-//404 Error
-app.use(function(req, res) {
-        res.render('404');
-});
-
 //Port
 app.listen(port, function() {
-  console.log("Listening on port:" + port);
+    console.log("Listening on port:" + port);
 });
-
-
-
 
 
