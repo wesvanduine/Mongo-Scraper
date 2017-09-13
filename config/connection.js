@@ -7,7 +7,7 @@ mongoose.connect("mongodb://localhost/goodnews", function(error)
 });
 
 
-/*mongoose.connect("", function(err) {
+mongoose.connect("", function(err) {
 	if(err) throw err;
 	console.log('database connected');
-});*/
+});
